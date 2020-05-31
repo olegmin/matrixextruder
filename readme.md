@@ -4,10 +4,12 @@
 
 # Запуск проекта
 
+Создаем образ:
 ```bash
-docker build -t mextruder:0.2 .
+docker build -t mextruder:0.3 .
 ```
 
+Запускаем контейнер:
 ```bash
-docker run --rm mextruder:0.2
+docker run --rm mextruder:0.3
 ```
