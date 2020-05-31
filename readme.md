@@ -5,9 +5,9 @@
 # Запуск проекта
 
 ```bash
-docker build -t mextruder:0.1 .
+docker build -t mextruder:0.2 .
 ```
 
 ```bash
-docker run mextruder
+docker run --rm mextruder:0.2
 ```
