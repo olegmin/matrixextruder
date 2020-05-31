@@ -9,5 +9,5 @@ docker build -t mextruder:0.2 .
 ```
 
 ```bash
-docker run mextruder:0.2
+docker run --rm mextruder:0.2
 ```
