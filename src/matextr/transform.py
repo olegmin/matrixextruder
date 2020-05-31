@@ -5,7 +5,6 @@
 
 def transform_raw_data(s: str):
     matrix = []
-    print(s)
     for line in s.split('\n'):
         if line.startswith('+'):
             continue
