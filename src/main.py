@@ -7,7 +7,8 @@ URL = 'https://f003.backblazeb2.com/file/am-avito/matrix.txt'
 
 async def get_matrix(url: str):
     async with ClientSession() as session:
-        async with session.get(URL) as resp:
+        async with session.get(url) as resp:
+            # TODO: resolve problem with server (responses not 2XX)
             result = await resp.text()
     return result
 
