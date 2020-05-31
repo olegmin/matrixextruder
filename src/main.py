@@ -1,6 +1,7 @@
 import asyncio
 from aiohttp import ClientSession
 
+from matextr.transform import transform_raw_data
 
 URL = 'https://f003.backblazeb2.com/file/am-avito/matrix.txt'
 
@@ -8,8 +9,8 @@ URL = 'https://f003.backblazeb2.com/file/am-avito/matrix.txt'
 async def get_matrix(url: str):
     async with ClientSession() as session:
         async with session.get(url) as resp:
-            # TODO: resolve problem with server (responses not 2XX)
-            result = await resp.text()
+            raw_data = await resp.text()
+            result = transform_raw_data(raw_data)
     return result
 
 
