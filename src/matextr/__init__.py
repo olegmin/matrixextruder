@@ -1,16 +1,14 @@
 """
     Matrix extracting package
 """
-from aiohttp import ClientSession
-
+from .extract import extract_data
 from .transform import transform_raw_data
 from .load import load_data
 
 
 async def get_matrix(url: str):
-    async with ClientSession() as session:
-        async with session.get(url) as resp:
-            response = await resp.text()
-            matrix = transform_raw_data(response)
-            result = load_data(matrix)
+    response = await extract_data(url)
+    print(f"Extracted raw data:\n{response}\n\n")
+    matrix = transform_raw_data(response)
+    result = load_data(matrix)
     return result
